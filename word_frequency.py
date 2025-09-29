@@ -33,9 +33,11 @@ user_sentence = input("Enter a sentence: ")
 
 while (is_sentence(user_sentence) == False):
     print("This does not meet the criteria for a sentence.")
-    user_input = input("Enter a sentence: ")
-    words_in_sentence = user_sentence.lower().replace(",", "").replace(".", "").replace("!", "").replace("?", "").split()
-    
+    user_sentence = input("Enter a sentence: ")
+
+#Split the sentence (only after valid input)
+words_in_sentence = user_sentence.lower().replace(",", "").replace(".", "").replace("!", "").replace("?", "").split()
+
 #Create lists for words and their frequencies
 words = []
 frequencies = []
@@ -43,13 +45,12 @@ frequencies = []
 #Count word frequencies
 for word in words_in_sentence:
     if word in words:
-        index = words.index(word)  # find the index of the word
+        index = words.index(word)
         frequencies[index] += 1
     else:
         words.append(word)
         frequencies.append(1)
 
 #Print results
-print("\nWord Frequencies:")
 for i in range(len(words)):
     print(f"{words[i]}: {frequencies[i]}")
