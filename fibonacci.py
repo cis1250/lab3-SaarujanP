@@ -31,3 +31,5 @@ if user_input.isdigit() and int(user_input) > 0:
 else:
     #Print invalid input
     print('Expected output: "Please enter a positive integer."')
+
+# your code is supposed to reprompt the user for input when they enter a wrong one instead of exiting the program -1
